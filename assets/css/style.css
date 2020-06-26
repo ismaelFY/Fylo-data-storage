@@ -1,0 +1,199 @@
+:root {
+  --pale-blue: hsl(243, 100%, 93%);
+  --white-blue: hsl(243, 100%, 99%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+}
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.875rem;
+  background-image: url("../images/bg-mobile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: var(--pale-blue);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.col {
+  background-color: var(--dark-blue);
+  width: 20rem;
+  border-radius: 0.62rem;
+  padding: 2rem;
+}
+.col-1 {
+  margin-bottom: 1rem;
+  border-radius: 0.62rem 6.5rem 0.62rem 0.62rem;
+}
+.card {
+  /* padding: 2rem; */
+  border-radius: 0.62rem;
+}
+.col-1 .card-body {
+  border-top-right-radius: 80px;
+}
+.card .card-icon {
+  margin-top: 2rem;
+  display: flex;
+}
+.card .card-icon .item {
+  background: hsl(229, 57%, 11%);
+  height: 30px;
+  width: 30px;
+  padding: 1.3rem;
+  margin-right: 0.8rem;
+  border-radius: 0.62rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .card-icon .item img {
+  height: 20px;
+  margin: 0 auto;
+}
+.col-2 .card-body p {
+  text-align: center;
+  color: var(--pale-blue);
+  font-weight: 400;
+}
+.col-2 .card-body strong {
+  color: var(--white-blue);
+}
+.col-2 .card-body {
+  position: relative;
+}
+.col-2 .card-body .bg-bar {
+  padding: 0.15rem;
+  background-color: var(--very-dark-blue);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.62rem;
+}
+.card-body .bg-bar .line-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+  border-radius: 0.62rem;
+  content: "";
+  padding: .15rem 0rem;
+  background-image: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  line-height: 1rem;
+}
+.card-body .bg-bar .line-bar .point {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0;
+  padding: 0;
+  line-height: 0.8em;
+  margin-right: 0.2rem;
+  border-radius: 50%;
+  background: var(--white-blue);
+}
+.card-body .bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.card-body .box-info {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  margin: 0 auto;
+  line-height: 2rem;
+  align-items: center;
+  background: white;
+  border-radius: 0.62rem;
+  padding: 1rem;
+}
+.card-body .box-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-body .box-info p {
+  margin: 0;
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+  font-weight: 600;
+  color: var(--very-dark-blue);
+}
+.card-body .box-info span {
+  font-size: 0.8rem;
+  line-height: 2rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+  color: var(--grayish-blue);
+}
+@media screen and (min-width: 876px) {
+  body {
+    background-color: var(--very-dark-blue);
+    background-image: url("../images//bg-desktop.png");
+    background-position: bottom;
+    background-size: 100vw 50vh;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .container .col-1 {
+    margin-bottom: 0;
+    margin-right: 3rem;
+  }
+  .container .col-2 {
+    width: 30rem;
+    padding: 2rem 2rem 1rem 2rem;
+    height: auto;
+  }
+  .card-body .bg-bar .line-bar {
+      height: auto;
+      padding: .15rem 0rem;
+  }
+  .col-2 .card-body p {
+    text-align: left;
+  }
+  .col-2 .box-info {
+    left: auto;
+    width: 10rem;
+    right: 0;
+    top: -4.5rem;
+    border-bottom-right-radius: 0px;
+  }
+  .col-2 .box-info::after {
+    position: absolute;
+    content: "";
+    bottom: -0.8rem;
+    right: 0;
+    height: 0rem;
+    width: 0rem;
+    border-right: 1rem solid white;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+  }
+}
